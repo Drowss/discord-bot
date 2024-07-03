@@ -45,12 +45,13 @@ public class Punch implements ICommand {
         PostgresDb.insertData(event.getMember().getId(), userHit);
 
         int hits = PostgresDb.selectHit(violentUser, userHit);
-
         String user = event.getOption("usuario", OptionMapping::getAsUser).getEffectiveName();
+        String hitText = hits == 1 ? " vez a " : " veces a ";
+
         EmbedBuilder embed = SlashCommands.createEmbed(
                 urls.get(randomInt()),
                 "No sé que poner aquí ",
-                event.getMember().getEffectiveName() + " ha golpeado " + hits + " veces a " + user,
+                event.getMember().getEffectiveName() + " ha golpeado " + hits + hitText + user,
                 "putx"
         );
         event.replyEmbeds(embed.build()).queue();
