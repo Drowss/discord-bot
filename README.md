@@ -6,6 +6,7 @@ This bot handles the following commands:
 - `/preguntar` - Tag a friend and ask who asked him or her
 - `/decir` - Bot says something
 - `/golpear` - Tag a friend and hit him or her, it counts the number of hits with Postgres
+- `/avatar` - Displays the avatar of the tagged user
 
 # Environment Variables <a name="environment-variables"></a>
 
