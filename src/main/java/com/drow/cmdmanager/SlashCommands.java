@@ -33,15 +33,12 @@ public class SlashCommands extends ListenerAdapter {
     }
 
     public static EmbedBuilder createEmbed(String imageUrl, String footerText, String title, String description) {
-        EmbedBuilder embed = new EmbedBuilder();
-        embed.setImage(imageUrl);
-        embed.setFooter(footerText, "https://media.discordapp.net/attachments/423257150593433610/1252484624723214366/image.png?ex=667262b4&is=66711134&hm=ce171a91dfbe9c6d5a4456d928b78bfee1eb0bc8763b297d402e5fdc43f1c2c8&=&format=webp&quality=lossless");
-        embed.setColor(Color.ORANGE);
-        embed.setTimestamp(Instant.now());
-        embed.setTitle(title);
-        if (description != null) {
-            embed.setDescription(description);
-        }
-        return embed;
+        return new EmbedBuilder()
+                .setImage(imageUrl)
+                .setFooter(footerText, "https://media.discordapp.net/attachments/423257150593433610/1252484624723214366/image.png?ex=667262b4&is=66711134&hm=ce171a91dfbe9c6d5a4456d928b78bfee1eb0bc8763b297d402e5fdc43f1c2c8&=&format=webp&quality=lossless")
+                .setColor(Color.ORANGE)
+                .setTimestamp(Instant.now())
+                .setTitle(title)
+                .setDescription(description);
     }
 }

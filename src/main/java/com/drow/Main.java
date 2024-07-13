@@ -29,7 +29,8 @@ public class Main {
                 new Greet(),
                 new Help(),
                 new Say(),
-                new Punch()
+                new Punch(),
+                new AvatarPic()
         );
 
         for (ICommand command : commandList) {
@@ -54,7 +55,9 @@ public class Main {
                         .addOption(OptionType.USER, "usuario", "A quién le preguntó el osito", true),
                 Commands.slash("ayuda", "Muestra todos los comandos disponibles"),
                 Commands.slash("golpe", "Golpea a alguien")
-                        .addOption(OptionType.USER, "usuario", "A quién vas a golpear", true)
+                        .addOption(OptionType.USER, "usuario", "A quién vas a golpear", true),
+                Commands.slash("avatar", "Muestra el avatar de un usuario")
+                        .addOption(OptionType.USER, "usuario", "Muestra el avatar de un usuario", true)
         ).queue();
     }
 }
